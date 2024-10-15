@@ -43,4 +43,8 @@ export class VideosService {
   addVideo(video: videos) {
     this.videos.push(video);
   }
+
+  atualizarVideo(index: number, videoAtualizado: videos) {
+    this.videos[index] = { ...videoAtualizado };
+  }
 }

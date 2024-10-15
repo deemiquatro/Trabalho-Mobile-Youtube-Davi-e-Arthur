@@ -24,8 +24,8 @@
       <div *ngIf="modoDeEdicao">
         <form>
       
-          <p>Título: </p><br><input type="text" [(ngModel)]="video.titulo" name="video.tiulo">
-          <p>Descrição: </p><br><input type="text" [(ngModel)]="video.descricao" name="video.descricao">
+          <p>Título: </p><input type="text" [(ngModel)]="video.titulo" name="video.tiulo"><br>
+          <p>Descrição: </p><input type="text" [(ngModel)]="video.descricao" name="video.descricao">
           <ion-buttons slot="end">
             <ion-button id="botaolista" padding (click)="salvarEdicao()">
               Salvar
