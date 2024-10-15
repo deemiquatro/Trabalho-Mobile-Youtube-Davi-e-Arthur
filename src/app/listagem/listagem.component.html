@@ -1,0 +1,6 @@
+<div *ngFor="let video of this.videos; let i = index">
+  <span>
+    <p>{{video.titulo}}</p>
+    <button routerLink="descricao/{{i}}">Mostrar descrição</button>
+  </span>
+</div>

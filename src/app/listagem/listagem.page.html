@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Lista de Vídeos</ion-title>
+  </ion-toolbar>
+</ion-header>
+<br>
+<ion-content>
+  <div class="video-grid">
+    <ion-item *ngFor="let video of videos; let i = index">
+      <span>
+        <p>{{ video.titulo }}</p>
+          <ion-buttons slot="end">
+            <ion-button id="botaolista" routerLink="descricao/{{ i }}">MOSTRAR DESCRICAO</ion-button>
+            <br><br>
+            <ion-button id="botaolista" (click)="removerVideo(i)">APAGAR VÍDEO</ion-button>
+          </ion-buttons>
+      </span>
+    </ion-item>
+  </div>
+  <div>
+    <br>
+    <span>
+      <ion-buttons slot="end">
+        <ion-button id="botaolista" routerLink="/cadastro">Adicionar Vídeo</ion-button>
+      </ion-buttons>
+    </span>
+  </div>
+  
+</ion-content>
+

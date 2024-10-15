@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Cadastrar Vídeo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="adicionarVideo()">
+    <ion-item>
+      <ion-label position="floating">Título</ion-label>
+      <ion-input type="text" [(ngModel)]="video.titulo" name="titulo" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Descrição</ion-label>
+      <ion-input type="text" [(ngModel)]="video.descricao" name="descricao" required></ion-input>
+    </ion-item>
+    <ion-button expand="full" type="submit">Adicionar Vídeo</ion-button>
+  </form>
+</ion-content>

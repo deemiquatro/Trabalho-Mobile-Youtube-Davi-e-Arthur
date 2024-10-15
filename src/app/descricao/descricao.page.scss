@@ -1,0 +1,18 @@
+ion-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+  }
+
+#botaolista {
+background-color: #4d8eff73; 
+margin: 7px 3px;
+}
+
+:host {
+display: flex;
+flex-direction: column;
+height: 100%;
+}

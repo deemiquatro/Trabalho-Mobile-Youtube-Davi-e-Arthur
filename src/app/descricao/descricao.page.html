@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Detalhes do Vídeo</ion-title>
+  </ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/">Voltar para página inicial</ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <span>
+    <p>Titulo: </p><p>{{video.titulo}}</p>
+    <p>Descrição: </p><p>{{video.descricao}}</p>
+  
+
+    <div *ngIf="!modoDeEdicao">
+      <ion-buttons slot="end">
+        <ion-button id="botaolista" (click)="iniciarEdicao()">
+          Alterar dados
+        </ion-button>
+      </ion-buttons>
+    </div>
+    <ion-content>
+      <div *ngIf="modoDeEdicao">
+        <form>
+      
+          <p>Título: </p><br><input type="text" [(ngModel)]="video.titulo" name="video.tiulo">
+          <p>Descrição: </p><br><input type="text" [(ngModel)]="video.descricao" name="video.descricao">
+          <ion-buttons slot="end">
+            <ion-button id="botaolista" padding (click)="salvarEdicao()">
+              Salvar
+            </ion-button>
+            <ion-button id="botaolista" padding (click)="cancelarEdicao()">
+              Cancelar
+            </ion-button>
+          </ion-buttons>
+        </form>
+      </div>
+    </ion-content>
+  </span>  
+</ion-content>
