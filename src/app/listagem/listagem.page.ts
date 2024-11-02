@@ -5,6 +5,8 @@ import { NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { ServiceToastService } from '../service-toast.service';
+import { addIcons } from 'ionicons';
+import { add } from 'ionicons/icons';
 
 @Component({
   selector: 'app-listagem',
@@ -16,7 +18,9 @@ export class ListagemPage implements OnInit {
   constructor(
     @Inject(VideosService) private service: VideosService,
     private toastService: ServiceToastService)
-  { }
+  {
+    addIcons({ add });
+   }
 
   videos: videos[] = [];
 

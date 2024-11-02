@@ -29,6 +29,7 @@ export class VideosService {
       descricao: "O especial de natal!",
     },
   ]
+
   
   constructor() { }
   
@@ -46,5 +47,18 @@ export class VideosService {
 
   atualizarVideo(index: number, videoAtualizado: videos) {
     this.videos[index] = { ...videoAtualizado };
+  }
+
+  adicionarVideoPromise(video: videos): Promise<string> {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (video.titulo && video.descricao) {
+          this.addVideo(video);
+          resolve('Vídeo adicionado com sucesso!');
+        } else {
+          reject('Preencha todos os campos!');
+        }
+      }, 1000);
+    });
   }
 }

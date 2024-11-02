@@ -21,9 +21,15 @@ export class CadastroPage implements OnInit {
   ) { }
 
   adicionarVideo() {
-    this.service.addVideo(this.video);
-    this.toastService.presentToast('Vídeo adicionado com sucesso!', 3000, 'top');
     this.router.navigate(['/listagem']);
+    this.service.adicionarVideoPromise(this.video)
+      .then((mensagem) => {
+        this.toastService.presentToast(mensagem, 3000, 'top');
+        this.video = { titulo: '', descricao: '' };
+      })
+      .catch((erro) => {
+        this.toastService.presentToast(erro, 3000, 'top');
+      });
   }
 
   ngOnInit() {
